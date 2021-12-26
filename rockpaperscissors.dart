@@ -35,39 +35,46 @@ void winner_selection(String player_choice, String computer_choice )
 
   if(player_choice==computer_choice)
   {
-    print("\nIt was a draw.");
+    print("\nIt was a draw.\n\n");
   }
-  if(player_choice=="R")
+  else if(player_choice=="R")
   {
     if(computer_choice == "S")
       print("\nHurrah! You win !!!\n\n");
   }
-  if(player_choice=="P")
+  else if(player_choice=="P")
   {
     if(computer_choice == "R")
       print("\nHurrah! You win !!!\n\n");
   }
-  if(player_choice=="S")
+  else if(player_choice=="S")
   {
     if(computer_choice == "P")
       print("\nHurrah! You win !!!\n\n");
   }
   else
+  {
     print("\nYou lost. Better Luck next time !!!\n\n");
+  }
 
   
 }
 
 void main()
 {
-  String? player_choice;
-  print("""Please Enter Your Choice : 
+  print("How many rounds do you want to play : ");
+  int nor = int.parse(stdin.readLineSync()!);
+  for(int i=1;i<=nor;i++)
+  {   
+      print("Round $i : ");
+      String? player_choice;
+      print("""Please Enter Your Choice : 
            1) R (for Rock)
            2) S (for scissors)
            3) P (for paper)""");
-  player_choice=stdin.readLineSync()!.toUpperCase();
+      player_choice = stdin.readLineSync()!.toUpperCase();
 
-  String computer_choice = computer_random_number()!;
-  winner_selection(player_choice,computer_choice);
-
+      String computer_choice = computer_random_number()!;
+      winner_selection(player_choice,computer_choice);
+  }
 }
