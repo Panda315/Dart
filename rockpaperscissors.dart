@@ -70,6 +70,4 @@ void main()
   String computer_choice = computer_random_number()!;
   winner_selection(player_choice,computer_choice);
 
-
-
 }
