@@ -27,34 +27,34 @@ String? computer_random_number()         //getting computer move , chosen random
   }
 }
 
-void winner_selection(String player_choice, String computer_choice )
+void winner_selection(String firstplayer_choice, String secondplayer_choice )
 {
 
-  print("\nPlayer : $player_choice");
-  print("Computer : $computer_choice");
+  print("\nPlayer_1: $firstplayer_choice");
+  print("Player_2 : $secondplayer_choice");
 
-  if(player_choice==computer_choice)
+  if(firstplayer_choice==secondplayer_choice)
   {
     print("\nIt was a draw.\n\n");
   }
-  else if(player_choice=="R")
+  else if(firstplayer_choice=="R")
   {
-    if(computer_choice == "S")
-      print("\nHurrah! You win !!!\n\n");
+    if(secondplayer_choice == "S")
+      print("\nHurrah! Player_1 win !!!\n\n");
   }
-  else if(player_choice=="P")
+  else if(firstplayer_choice=="P")
   {
-    if(computer_choice == "R")
-      print("\nHurrah! You win !!!\n\n");
+    if(secondplayer_choice == "R")
+      print("\nHurrah! Player_1 win !!!\n\n");
   }
-  else if(player_choice=="S")
+  else if(firstplayer_choice=="S")
   {
-    if(computer_choice == "P")
-      print("\nHurrah! You win !!!\n\n");
+    if(secondplayer_choice == "P")
+      print("\nHurrah! Player_1 win !!!\n\n");
   }
   else
   {
-    print("\nYou lost. Better Luck next time !!!\n\n");
+    print("\nPlayer_1 lost. Better Luck next time !!!\n\n");
   }
 
   
@@ -91,15 +91,15 @@ void main()
           int nor = int.parse(stdin.readLineSync()!);
           for(int i=1;i<=nor;i++)
           {   
-              print("Round $i : ");
+              print("\nRound $i : ");
               String? firstplayer_choice,secondplayer_choice;
-              print("""Player 1 Enter Your Choice : 
+              print("""Player_1 Enter Your Choice : 
                        1) R (for Rock)
                        2) S (for scissors)
                        3) P (for paper)""");
               firstplayer_choice = stdin.readLineSync()!.toUpperCase();
 
-              print("""Player 2 Enter Your Choice : 
+              print("""Player_2 Enter Your Choice : 
                        1) R (for Rock)
                        2) S (for scissors)
                        3) P (for paper)""");
