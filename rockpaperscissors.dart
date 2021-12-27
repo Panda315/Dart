@@ -110,7 +110,7 @@ void main()
           break;
 
   default:
-      print("Incorrect command !!!");
+      print("\n\nIncorrect command !!!");
       break;
   }
 }
