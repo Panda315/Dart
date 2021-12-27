@@ -62,19 +62,56 @@ void winner_selection(String player_choice, String computer_choice )
 
 void main()
 {
-  print("How many rounds do you want to play : ");
-  int nor = int.parse(stdin.readLineSync()!);
-  for(int i=1;i<=nor;i++)
-  {   
-      print("Round $i : ");
-      String? player_choice;
-      print("""Please Enter Your Choice : 
-           1) R (for Rock)
-           2) S (for scissors)
-           3) P (for paper)""");
-      player_choice = stdin.readLineSync()!.toUpperCase();
+  print("""Please enter the mode you want to play : 
+           1) Player vs Computer
+           2) Player vs Player """);
+  int mode = int.parse(stdin.readLineSync()!);
+  switch (mode)
+  {
+  case 1:
+          print("How many rounds do you want to play : ");
+          int nor = int.parse(stdin.readLineSync()!);
+          for(int i=1;i<=nor;i++)
+          {   
+              print("Round $i : ");
+              String? player_choice;
+              print("""Please Enter Your Choice : 
+                       1) R (for Rock)
+                       2) S (for scissors)
+                       3) P (for paper)""");
+              player_choice = stdin.readLineSync()!.toUpperCase();
 
-      String computer_choice = computer_random_number()!;
-      winner_selection(player_choice,computer_choice);
+              String computer_choice = computer_random_number()!;
+              winner_selection(player_choice,computer_choice);
+          }
+          break;
+
+  case 2:
+        print("How many rounds do you want to play : ");
+          int nor = int.parse(stdin.readLineSync()!);
+          for(int i=1;i<=nor;i++)
+          {   
+              print("Round $i : ");
+              String? firstplayer_choice,secondplayer_choice;
+              print("""Player 1 Enter Your Choice : 
+                       1) R (for Rock)
+                       2) S (for scissors)
+                       3) P (for paper)""");
+              firstplayer_choice = stdin.readLineSync()!.toUpperCase();
+
+              print("""Player 2 Enter Your Choice : 
+                       1) R (for Rock)
+                       2) S (for scissors)
+                       3) P (for paper)""");
+              secondplayer_choice = stdin.readLineSync()!.toUpperCase();
+
+              winner_selection(firstplayer_choice,secondplayer_choice);
+          }
+          break;
+
+  default:
+      print("Incorrect command !!!");
+      break;
   }
 }
+//which player won is not shown 
