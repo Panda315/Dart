@@ -27,11 +27,11 @@ String? computer_random_number()         //getting computer move , chosen random
   }
 }
 
-void winner_selection(String firstplayer_choice, String secondplayer_choice )
+void winner_selection(String name_1,String firstplayer_choice, String secondplayer_choice,String name_2)
 {
 
-  print("\nPlayer_1: $firstplayer_choice");
-  print("Player_2 : $secondplayer_choice");
+  print("\n" + name_1 + ": $firstplayer_choice");
+  print(name_2 + ": $secondplayer_choice");
 
   if(firstplayer_choice==secondplayer_choice)
   {
@@ -69,6 +69,8 @@ void main()
   switch (mode)
   {
   case 1:
+          print("Enter your name : ");
+          String name_1= stdin.readLineSync()!;
           print("How many rounds do you want to play : ");
           int nor = int.parse(stdin.readLineSync()!);
           for(int i=1;i<=nor;i++)
@@ -82,12 +84,16 @@ void main()
               player_choice = stdin.readLineSync()!.toUpperCase();
 
               String computer_choice = computer_random_number()!;
-              winner_selection(player_choice,computer_choice);
+              winner_selection(name_1,player_choice,computer_choice,"Computer");
           }
           break;
 
   case 2:
-        print("How many rounds do you want to play : ");
+          print("\nEnter first player name : ");
+          String name_1 = stdin.readLineSync()!;
+          print("\nEnter second player name : ");
+          String name_2 = stdin.readLineSync()!;
+          print("How many rounds do you want to play : ");
           int nor = int.parse(stdin.readLineSync()!);
           for(int i=1;i<=nor;i++)
           {   
@@ -105,7 +111,7 @@ void main()
                        3) P (for paper)""");
               secondplayer_choice = stdin.readLineSync()!.toUpperCase();
 
-              winner_selection(firstplayer_choice,secondplayer_choice);
+              winner_selection(name_1,firstplayer_choice,secondplayer_choice,name_2);
           }
           break;
 
