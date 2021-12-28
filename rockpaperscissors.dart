@@ -40,21 +40,25 @@ void winner_selection(String name_1,String firstplayer_choice, String secondplay
   else if(firstplayer_choice=="R")
   {
     if(secondplayer_choice == "S")
-      print("\nHurrah! Player_1 win !!!\n\n");
+      print("\nHurrah! " + name_1 + " won !!!\n\n");
   }
   else if(firstplayer_choice=="P")
   {
     if(secondplayer_choice == "R")
-      print("\nHurrah! Player_1 win !!!\n\n");
+      print("\nHurrah! " + name_1 + " won !!!\n\n");
   }
   else if(firstplayer_choice=="S")
   {
     if(secondplayer_choice == "P")
-      print("\nHurrah! Player_1 win !!!\n\n");
+      print("\nHurrah! " + name_1 + " won !!!\n\n");
   }
   else
   {
-    print("\nPlayer_1 lost. Better Luck next time !!!\n\n");
+    if(name_2=="Computer")
+      print("\nYou lost. Better Luck next time !!!\n\n");
+
+    else  
+      print("\n" + name_2 + " won !!!");
   }
 
   
@@ -69,13 +73,13 @@ void main()
   switch (mode)
   {
   case 1:
-          print("Enter your name : ");
+          print("\nEnter your name : ");
           String name_1= stdin.readLineSync()!;
-          print("How many rounds do you want to play : ");
+          print("\nHow many rounds do you want to play : ");
           int nor = int.parse(stdin.readLineSync()!);
           for(int i=1;i<=nor;i++)
           {   
-              print("Round $i : ");
+              print("\nRound $i : ");
               String? player_choice;
               print("""Please Enter Your Choice : 
                        1) R (for Rock)
@@ -93,7 +97,7 @@ void main()
           String name_1 = stdin.readLineSync()!;
           print("\nEnter second player name : ");
           String name_2 = stdin.readLineSync()!;
-          print("How many rounds do you want to play : ");
+          print("\nHow many rounds do you want to play : ");
           int nor = int.parse(stdin.readLineSync()!);
           for(int i=1;i<=nor;i++)
           {   
