@@ -3,6 +3,8 @@
 import 'dart:io';
 import 'dart:math';
 
+int round_wb1=0,round_wb2=0;             //round_wb1 = round won by player_1
+
 String? computer_random_number()         //getting computer move , chosen randomly by computer
 {
   Random choice = new Random();
@@ -27,36 +29,50 @@ String? computer_random_number()         //getting computer move , chosen random
 
 void winner_selection(String name_1,String firstplayer_choice, String secondplayer_choice,String name_2)
 {
-
   print("\n" + name_1 + ": $firstplayer_choice");
   print(name_2 + ": $secondplayer_choice");
 
   if(firstplayer_choice==secondplayer_choice)
   {
-    print("\nIt was a draw.\n\n");
+    print("\nIt was a draw.\n");
   }
   else if(firstplayer_choice=="R")
   {
     if(secondplayer_choice == "S")
-      print("\nHurrah! " + name_1 + " won !!!\n\n");
+    {
+      print("\nHurrah! " + name_1 + " won !!!\n");
+      round_wb1++;
+    }
   }
   else if(firstplayer_choice=="P")
   {
     if(secondplayer_choice == "R")
-      print("\nHurrah! " + name_1 + " won !!!\n\n");
+    {
+      print("\nHurrah! " + name_1 + " won !!!\n");
+      round_wb1++;
+    }
   }
   else if(firstplayer_choice=="S")
   {
     if(secondplayer_choice == "P")
-      print("\nHurrah! " + name_1 + " won !!!\n\n");
+    {
+      print("\nHurrah! " + name_1 + " won !!!\n");
+      round_wb1++;
+    }
   }
   else
   {
     if(name_2=="Computer")
-      print("\nYou lost. Better Luck next time !!!\n\n");
+    {
+      print("\nYou lost. Better Luck next time !!!\n");
+      round_wb2++;
+    }
 
     else  
+    {
       print("\n" + name_2 + " won !!!");
+      round_wb2++;
+    }
   }
 
   
@@ -64,6 +80,7 @@ void winner_selection(String name_1,String firstplayer_choice, String secondplay
 
 void main()
 {
+  
   print("""Please enter the mode you want to play : 
            1) Player vs Computer
            2) Player vs Player """);
@@ -75,7 +92,6 @@ void main()
           String name_1= stdin.readLineSync()!;
           print("\nHow many rounds do you want to play : ");
           int nor = int.parse(stdin.readLineSync()!);
-          int round_wb1,round_wb2 = 0;
           for(int i=1;i<=nor;i++)
           {   
               print("\nRound $i : ");
@@ -98,7 +114,6 @@ void main()
           String name_2 = stdin.readLineSync()!;
           print("\nHow many rounds do you want to play : ");
           int nor = int.parse(stdin.readLineSync()!);
-          int round_wb1,round_wb2 = 0;                //round_wb1 = round won by player_1
           for(int i=1;i<=nor;i++)
           {   
               print("\nRound $i : ");
@@ -123,4 +138,6 @@ void main()
       print("\n\nIncorrect command !!!");
       break;
   }
+
+
 }
