@@ -12,17 +12,15 @@ String? computer_random_number()         //getting computer move , chosen random
   {
     case 0:
       return "R";
-      break;
 
     case 1:
       return "P";
-      break;
 
     case 2:
       return "S";
-      break;
     
     default : 
+    print("\nSorry ! This round has been called off.");
       break;
   }
 }
@@ -77,6 +75,7 @@ void main()
           String name_1= stdin.readLineSync()!;
           print("\nHow many rounds do you want to play : ");
           int nor = int.parse(stdin.readLineSync()!);
+          int round_wb1,round_wb2 = 0;
           for(int i=1;i<=nor;i++)
           {   
               print("\nRound $i : ");
@@ -99,6 +98,7 @@ void main()
           String name_2 = stdin.readLineSync()!;
           print("\nHow many rounds do you want to play : ");
           int nor = int.parse(stdin.readLineSync()!);
+          int round_wb1,round_wb2 = 0;                //round_wb1 = round won by player_1
           for(int i=1;i<=nor;i++)
           {   
               print("\nRound $i : ");
@@ -124,4 +124,3 @@ void main()
       break;
   }
 }
-//which player won is not shown 
