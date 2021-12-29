@@ -73,10 +73,28 @@ void winner_selection(String name_1,String firstplayer_choice, String secondplay
       print("\n" + name_2 + " won !!!");
       round_wb2++;
     }
-  }
-
-  
+  } 
 }
+
+
+print_winner(String name_1,String name_2)
+{
+  if(round_wb1==round_wb2)
+    print("The game was draw with score of $round_wb1-$round_wb2.\n");
+
+  else if(round_wb1>round_wb2)
+    print( name_1 + " won the match by the score of $round_wb1-$round_wb2.\n");
+
+  else
+  {
+    if(name_2=="Computer")
+      print("You lost the match by the score of $round_wb2-$round_wb1.\n");
+
+    else  
+      print( name_2 + " won the match by the score of $round_wb2-$round_wb1.\n");
+  }
+}
+
 
 void main()
 {
@@ -104,7 +122,8 @@ void main()
 
               String computer_choice = computer_random_number()!;
               winner_selection(name_1,player_choice,computer_choice,"Computer");
-          }
+          } 
+          print_winner(name_1,"Computer");
           break;
 
   case 2:
@@ -132,12 +151,13 @@ void main()
 
               winner_selection(name_1,firstplayer_choice,secondplayer_choice,name_2);
           }
+          print_winner(name_1,name_2);
           break;
 
   default:
       print("\n\nIncorrect command !!!");
       break;
   }
-
-
+  
 }
+
