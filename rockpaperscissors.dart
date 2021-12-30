@@ -184,13 +184,13 @@ void main()
               print("\nRound $i : ");
               String? firstplayer_choice,secondplayer_choice;
               stdin.echoMode = false ;
-              print(name_1 + """ Enter Your Choice : 
+              print( name_1 + """ Enter Your Choice : 
                        1) R (for Rock)
                        2) S (for scissors)
                        3) P (for paper)""");
               firstplayer_choice = stdin.readLineSync()!.toUpperCase();
 
-              print(name_2 + """ Enter Your Choice : 
+              print( name_2 + """ Enter Your Choice : 
                        1) R (for Rock)
                        2) S (for scissors)
                        3) P (for paper)""");
