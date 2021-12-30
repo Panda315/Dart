@@ -126,18 +126,18 @@ void winner_selection(String name_1,String firstplayer_choice, String secondplay
 print_winner(String name_1,String name_2)
 {
   if(round_wb1==round_wb2)
-    print("The game was draw with score of $round_wb1-$round_wb2.\n");
+    print("RESULT : The game was draw with score of $round_wb1-$round_wb2.\n");
 
   else if(round_wb1>round_wb2)
-    print( name_1 + " won the match by the score of $round_wb1-$round_wb2.\n");
+    print( "RESULT : " + name_1 + " won the match by the score of $round_wb1-$round_wb2.\n");
 
   else
   {
     if(name_2=="Computer")
-      print("You lost the match by the score of $round_wb2-$round_wb1.\n");
+      print("RESULT : You lost the match by the score of $round_wb2-$round_wb1.\n");
 
     else  
-      print( name_2 + " won the match by the score of $round_wb2-$round_wb1.\n");
+      print( "RESULT : "+ name_2 + " won the match by the score of $round_wb2-$round_wb1.\n");
   }
 }
 
