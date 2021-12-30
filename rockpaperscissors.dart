@@ -36,6 +36,7 @@ void winner_selection(String name_1,String firstplayer_choice, String secondplay
   {
     print("\nIt was a draw.\n");
   }
+
   else if(firstplayer_choice=="R")
   {
     if(secondplayer_choice == "S")
@@ -43,7 +44,22 @@ void winner_selection(String name_1,String firstplayer_choice, String secondplay
       print("\nHurrah! " + name_1 + " won !!!\n");
       round_wb1++;
     }
+    else
+    {
+      if(name_2=="Computer")
+      {
+        print("\nYou lost. Better Luck next time !!!\n");
+        round_wb2++;
+      }
+
+      else  
+      {
+      print("\n" + name_2 + " won !!!");
+      round_wb2++;
+      }
+    }  
   }
+
   else if(firstplayer_choice=="P")
   {
     if(secondplayer_choice == "R")
@@ -51,7 +67,22 @@ void winner_selection(String name_1,String firstplayer_choice, String secondplay
       print("\nHurrah! " + name_1 + " won !!!\n");
       round_wb1++;
     }
+    else
+    {
+      if(name_2=="Computer")
+      {
+        print("\nYou lost. Better Luck next time !!!\n");
+        round_wb2++;
+      }
+
+      else  
+      {
+      print("\n" + name_2 + " won !!!");
+      round_wb2++;
+      }
+    } 
   }
+
   else if(firstplayer_choice=="S")
   {
     if(secondplayer_choice == "P")
@@ -59,7 +90,22 @@ void winner_selection(String name_1,String firstplayer_choice, String secondplay
       print("\nHurrah! " + name_1 + " won !!!\n");
       round_wb1++;
     }
+    else
+    {
+      if(name_2=="Computer")
+      {
+        print("\nYou lost. Better Luck next time !!!\n");
+        round_wb2++;
+      }
+
+      else  
+      {
+      print("\n" + name_2 + " won !!!");
+      round_wb2++;
+      }
+    } 
   }
+
   else
   {
     if(name_2=="Computer")
@@ -137,6 +183,7 @@ void main()
           {   
               print("\nRound $i : ");
               String? firstplayer_choice,secondplayer_choice;
+              stdin.echoMode = false ;
               print(name_1 + """ Enter Your Choice : 
                        1) R (for Rock)
                        2) S (for scissors)
@@ -148,7 +195,7 @@ void main()
                        2) S (for scissors)
                        3) P (for paper)""");
               secondplayer_choice = stdin.readLineSync()!.toUpperCase();
-
+              stdin.echoMode = true ;
               winner_selection(name_1,firstplayer_choice,secondplayer_choice,name_2);
           }
           print_winner(name_1,name_2);
