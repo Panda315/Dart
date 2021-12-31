@@ -166,7 +166,7 @@ int main()
                        3) P (for paper)""");
               player_choice = stdin.readLineSync()!.toUpperCase();
 
-              if(player_choice != 'R'|| player_choice != 'P'|| player_choice != 'S')
+              if(player_choice != 'R'&& player_choice != 'P'&& player_choice != 'S')
               {
                 print("\n--------------------------- Your choice was neither R (rock) , P (paper) nor S (scissors) ------------------------");
                 return 0;
@@ -198,7 +198,7 @@ int main()
                        3) P (for paper)""");
               firstplayer_choice = stdin.readLineSync()!.toUpperCase();
 
-              if(firstplayer_choice != 'R'|| firstplayer_choice != 'P'|| firstplayer_choice != 'S')
+              if(firstplayer_choice != 'R'&& firstplayer_choice != 'P'&& firstplayer_choice != 'S')
               {
                 print("\n--------------------------- " + name_1 + " choice was neither R (rock) , P (paper) nor S (scissors) ------------------------");
                 return 0;
@@ -210,7 +210,7 @@ int main()
                        3) P (for paper)""");
               secondplayer_choice = stdin.readLineSync()!.toUpperCase();
 
-              if(secondplayer_choice != 'R'|| secondplayer_choice != 'P'|| secondplayer_choice != 'S')
+              if(secondplayer_choice != 'R'&& secondplayer_choice != 'P'&& secondplayer_choice != 'S')
               {
                 print("\n--------------------------- Your choice was neither R (rock) , P (paper) nor S (scissors) ------------------------");
                 return 0;
