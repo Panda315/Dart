@@ -142,7 +142,7 @@ print_winner(String name_1,String name_2)
 }
 
 
-void main()
+int main()
 {
   
   print("""Please enter the mode you want to play : 
@@ -166,8 +166,16 @@ void main()
                        3) P (for paper)""");
               player_choice = stdin.readLineSync()!.toUpperCase();
 
+              if(player_choice != 'R'|| player_choice != 'P'|| player_choice != 'S')
+              {
+                print("\n--------------------------- Your choice was neither R (rock) , P (paper) nor S (scissors) ------------------------");
+                return 0;
+              }
+              else
+              {
               String computer_choice = computer_random_number()!;
               winner_selection(name_1,player_choice,computer_choice,"Computer");
+              }
           } 
           print_winner(name_1,"Computer");
           break;
@@ -190,11 +198,25 @@ void main()
                        3) P (for paper)""");
               firstplayer_choice = stdin.readLineSync()!.toUpperCase();
 
+              if(firstplayer_choice != 'R'|| firstplayer_choice != 'P'|| firstplayer_choice != 'S')
+              {
+                print("\n--------------------------- " + name_1 + " choice was neither R (rock) , P (paper) nor S (scissors) ------------------------");
+                return 0;
+              }
+  
               print( name_2 + """ Enter Your Choice : 
                        1) R (for Rock)
                        2) S (for scissors)
                        3) P (for paper)""");
               secondplayer_choice = stdin.readLineSync()!.toUpperCase();
+
+              if(secondplayer_choice != 'R'|| secondplayer_choice != 'P'|| secondplayer_choice != 'S')
+              {
+                print("\n--------------------------- Your choice was neither R (rock) , P (paper) nor S (scissors) ------------------------");
+                return 0;
+              }
+              
+
               stdin.echoMode = true ;
               winner_selection(name_1,firstplayer_choice,secondplayer_choice,name_2);
           }
@@ -205,6 +227,6 @@ void main()
       print("\n\nIncorrect command !!!");
       break;
   }
-  
+  return 0;
 }
 
