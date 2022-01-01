@@ -187,7 +187,7 @@ int main()
           String name_2 = stdin.readLineSync()!;
           print("\nHow many rounds do you want to play : ");
           int nor = int.parse(stdin.readLineSync()!);
-          print("\nThe users input will be hidden.\nAny typed letter will not be shown on the screen until both the users have entered there choices.");
+          print("\n------------------------------ The users input will be hidden -------------------------------- \nAny typed letter will not be shown on the screen until both the users have entered their choices.");
           for(int i=1;i<=nor;i++)
           {   
               print("\nRound $i : ");
