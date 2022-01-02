@@ -225,7 +225,7 @@ int main()
           break;
 
   default:
-      print("\n\nIncorrect command !!!");
+      print("\n\n Incorrect command !!!");
       break;
   }
   return 0;
